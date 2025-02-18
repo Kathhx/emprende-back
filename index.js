@@ -1,3 +1,4 @@
+require('dotenv').config();
 const http = require("http"); //Importa el módulo HTTP de Node.js
 //const exportarDesdeOtro=require('./otro.js');
 //console.log({exportarDesdeOtro});
@@ -9,4 +10,7 @@ function requestController(){
 //configurar el servidor
 const server = http.createServer(requestController); //montar el servidor
 
-server.listen(4000);
+const PORT=process.env.PORT;
+server.listen(function(){
+    console.log("Aplicacion correindo en puerto: "+PORT);
+});
