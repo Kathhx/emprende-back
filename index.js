@@ -1,8 +1,8 @@
+require("dotenv").config();
 const http=require('http');
 
-const importarDeAnother =require('./another');
-console.log(importarDeAnother);
-
+// const importarDeAnother =require('./another');
+// console.log(importarDeAnother);
 
 function controladorPeticiones(){
     console.log("Recibimos una nueva peticion");
@@ -11,7 +11,10 @@ function controladorPeticiones(){
 //Configurar el servidor
 const server=http.createServer(controladorPeticiones);
 
-server.listen(4000);
+const PORT=process.env.PORT;
+server.listen(PORT,function(){
+    console.log("Aplicación corriendo en puerto: "+PORT);
+});
 
 
 
