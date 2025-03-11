@@ -13,6 +13,9 @@ const server=http.createServer(controladorPeticiones);
 
 server.listen(4000);
 
+
+
+
 /*
 Variables: Espacio en memoria para su postrior uso
 let (El contenido puede cambiar), const (EL contenido no puede cambiar)
